@@ -1,6 +1,6 @@
 
 const startGameButton = document.getElementById('start-btn');
-const timerEl = document.getElementById('timer');
+
 const welcomeH3 = document.getElementById('heading-title');
 
 
@@ -62,14 +62,11 @@ function renderQuestions(questionIndex){
             if(choice.title === "Xbox"){
                 queryParams += "&platforms=186";
 
-                    
-            
             }
             
             if(choice.title === "PC (The Master Race)"){
                 queryParams += "&platforms=4";
 
-              
             }
 
 
@@ -88,84 +85,24 @@ function renderQuestions(questionIndex){
             
             if(choice.title === "PEW PEW, lets get some!"){
                 tagsParams.push("looter shooter", "third-person-shooter", "first-person-shooter");
-                // fetch('https://rawg-video-games-database.p.rapidapi.com/games?page_size=300&key=' + apiKey)
-                //     .then(response => response.json())
-                //     .then(data  => {
-                        
-                    //     const ShooterGames = data.results.filter(function(game){
-                    //         const ShooterGamesIndex = game.tags.findIndex(function(tag){
-                    //             return tag.slug === 'looter shooter', 'third-person-shooter' || 'first-person-shooter' })
-                                
-                                
-                    //         return ShooterGamesIndex !== -1;
-
-                            
-                    //     })
-
-                    //     console.log(ShooterGames)
-                    // })
+                
             }
 
 
             if(choice.title === "Guns are bad mmkay"){
                 tagsParams.push("medieval", "magic", "mythology", "combat", "hack-and-slash");
-                // fetch('https://rawg-video-games-database.p.rapidapi.com/games?page_size=300&key=' + apiKey)
-                //     .then(response => response.json())
-                //     .then(data  => {
-                        
-                //         const nonShooterGames = data.results.filter(function(game){
-                //             const nonShooterGamesIndex = game.tags.findIndex(function(tag){
-                //                 return tag.slug === 'medieval' || 'magic' || 'mythology' || 'combat' || 'hack-and-slash'})
-                                
-                                
-                //             return nonShooterGamesIndex !== -1;
-
-                            
-                //         })
-
-                //         console.log(nonShooterGames)
-                //     })
+                
             }
 
             if(choice.title === "Im Going on an Adventure!"){
                 tagsParams.push('rpg', 'story rich', 'fantasy', 'sandbox', 'role-playing', 'open world', 'lore rich');
 
-                // fetch('https://rawg-video-games-database.p.rapidapi.com/games?page_size=300&key=' + apiKey)
-                //     .then(response => response.json())
-                //     .then(data  => {
-                        
-                //         const adventureGames = data.results.filter(function(game){
-                //             const adventureGamesIndex = game.tags.findIndex(function(tag){
-                //                 return tag.slug === 'rpg', 'story rich', 'fantasy', 'sandbox', 'role-playing', 'open world', 'lore rich'})
-                                
-                                
-                //             return adventureGamesIndex !== -1;
-
-                            
-                //         })
-
-                //         console.log(adventureGames)
-                //     })
+                
             }
 
             if(choice.title === "AINT NOBODY GOT TIME FOR DAT"){
                 tagsParams.push('FPS', 'funny', 'action', 'horror', 'zombies');
-                // fetch('https://rawg-video-games-database.p.rapidapi.com/games?page_size=300&key=' + apiKey)
-                //     .then(response => response.json())
-                //     .then(data  => {
-                        
-                //         const nonAdventureGames = data.results.filter(function(game){
-                //             const nonAdventureGamesIndex = game.tags.findIndex(function(tag){
-                //                 return tag.slug === 'FPS', 'funny', 'action', 'horror', 'zombies'})
-                                
-                                
-                //             return nonAdventureGamesIndex !== -1;
-
-                            
-                //         })
-
-                //         console.log(nonAdventureGames)
-                //     })
+                
             }
 
             
@@ -182,19 +119,30 @@ function renderQuestions(questionIndex){
                     .then(response => response.json())
                     .then(data  => {
                         
-                            
-                        console.log(data.results);
+                          
+                        // console.log(data.results);
 
+                        let randomGames = data.results;
+                        console.log(randomGames);
+
+                        let chosenOne  = randomGames[Math.floor(Math.random() * randomGames.length)];
+                        console.log(chosenOne);
+                        // console.log(baseUrl + tagsParams);
+
+                        //get background_image
+                        //get name
+                        // get released (the date)
+                        // get store link (results.stores.store.domain)
 
                         /// get random game from results
 
                         // call a renderGame()
-renderGame(randomGame)
+                        // renderGame(randomGame)
 
                         
                     })
 
-                return;
+                return chosenOne;
                 // return gameOver()
 
                 // go to/redirect to results page
@@ -221,6 +169,8 @@ renderGame(randomGame)
 
 
 function renderGame(game){
-
+// create elements for retrieved data to live in
+// or hard code on results
+// const row =$("<div>");
 
 }
