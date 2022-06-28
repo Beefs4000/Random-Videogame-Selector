@@ -1,8 +1,9 @@
 bulmaCarousel.attach('#slider', {
     slidesToScroll: 1,
-    slidesToShow: 3,
+    slidesToShow: 2,
+    pagination: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 4000,
   });
   
