@@ -63,3 +63,11 @@ li{
 #end-game{
     background-color: aquamarine;
 }
+#start-btn{
+    color: rgb(255, 204, 0);
+    background-color: hwb(310 17% 34%);
+}
+.question-choice{
+    color: rgb(255, 204, 0);
+    background-color: hwb(310 17% 34%);
+}
