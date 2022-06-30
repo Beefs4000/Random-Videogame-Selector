@@ -6,9 +6,13 @@
     justify-content: center;
     padding-top: 5px;
     padding: 30px;
-    background-color: aquamarine;
+    background-color: rgba(0, 0, 0, 0.79);
 } 
 
+body{
+    padding: 0;
+    
+}
 .hide{
     display: none;
 }
@@ -25,7 +29,7 @@
     background-color: red;
 }
 
-.welcome{
+.container{
     background-color: aquamarine;
     padding: px;
 }
@@ -39,11 +43,22 @@
     margin-right: auto;
 }
 
+#heading-title{
+    background-color: rgba(0, 0, 0, 0.372);
+}
+
+#question-title{
+    background-color: rgba(0, 0, 0, 0.372);
+}
+
 #section-question{
     background-color: aquamarine;
     
 }
 
+li{
+    background-color: rgba(255, 0, 0, 0.372);
+}
 
 #end-game{
     background-color: aquamarine;
