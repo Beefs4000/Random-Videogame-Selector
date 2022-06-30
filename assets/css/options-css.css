@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    text-align: center;
+    list-style: none;
+    justify-content: center;
+    padding-top: 5px;
+    padding: 30px;
+    background-color: aquamarine;
+} 
+
+.hide{
+    display: none;
+}
+
+.green{
+    background-color: green;
+}
+
+.bg-green{
+    background-color: aquamarine
+}
+
+.red{
+    background-color: red;
+}
+
+.welcome{
+    background-color: aquamarine;
+    padding: px;
+}
+#timer{
+    margin-bottom: auto;
+}
+#initials{
+    /* justify-content: center; */
+    color: red;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#section-question{
+    background-color: aquamarine;
+    
+}
+
+
+#end-game{
+    background-color: aquamarine;
+}
