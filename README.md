@@ -1,4 +1,4 @@
-# 07 Project 1: Randdom Video Game Selector
+# 07 Project 1: Random Video Game Selector
 This was our first group project assigned to us thus far.
 As a group we decided to try to create an application that randomly decides an generates a game for you based on certain criteria you selected in a few questions provided.
 
