@@ -27,6 +27,6 @@ Justin Dennis - [Link to github Profile](https://github.com/Beefs4000)
 Ethan Malone - [Link to github Profile](https://github.com/WhatisAvaliabl)
 
 ## Links
-* [Link to deployed Website](https://beefs4000.github.io/Random-Videogame-Selector/)
-* [Link to github Repository](https://github.com/Beefs4000/Random-Videogame-Selector)
+* [Random Videogame Generator](https://beefs4000.github.io/Random-Videogame-Selector/)
+* [Github Repository](https://github.com/Beefs4000/Random-Videogame-Selector)
 * ![Screenshot](assets/project1-screenshot.PNG)
