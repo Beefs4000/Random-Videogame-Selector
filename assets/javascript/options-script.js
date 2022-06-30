@@ -126,9 +126,9 @@ function renderQuestions(questionIndex){
                         console.log(randomGames);
 
                         let chosenOne  = randomGames[Math.floor(Math.random() * randomGames.length)];
-                        console.log(chosenOne);
                         // console.log(baseUrl + tagsParams);
-
+                        localStorage.setItem('chosenOne', JSON.stringify(chosenOne));
+                        console.log(chosenOne);
                         //get background_image
                         //get name
                         // get released (the date)
@@ -138,11 +138,11 @@ function renderQuestions(questionIndex){
 
                         // call a renderGame()
                         // renderGame(randomGame)
-
                         
+                        window.location.href = "result.html";
                     })
 
-                return chosenOne;
+                // return chosenOne;
                 // return gameOver()
 
                 // go to/redirect to results page
@@ -162,9 +162,9 @@ function renderQuestions(questionIndex){
      
     }
     
+    
       
 }
-
 
 
 
