@@ -15,7 +15,7 @@ const chosenOneGenres = document.getElementById('genres');
 const chosenOnePlatforms = document.getElementById('platforms');
 const chosenOneRelease = document.getElementById('release-date');
 const chosenOneStores = document.getElementById('stores');
-// const storeLinks = document.getElementById('store-links');
+const storeLinks = document.getElementById('store-links');
 
 const chosenOne = JSON.parse(localStorage.getItem('chosenOne')) || null;
 console.log(chosenOne);
