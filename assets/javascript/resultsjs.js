@@ -22,72 +22,50 @@ console.log(chosenOne);
 
 
 function generateGameDisplayHtml(event){
-	chosenOneTitle.textContent = "";
-	chosenGameImage.textContent = "";
-	chosenOneGenres.textContent = "";
-	chosenOnePlatforms.textContent = "";
-	chosenOneRelease.textContent = "";
-	chosenOneStores.textContent = "";
-	// storeLinks.textContent = "";
-
-	const title = chosenOne.name;
-	chosenOneTitle.textContent = title;
-
-	const gameImage = chosenOne.background_image;
-	chosenGameImage.src = gameImage;
-
-	
-	const genres = chosenOne.genres;
-	let genreLength = genres.length;
-	let allGenres = "Genres: ";
-
-	for (let i = 0; i < genreLength; i++) {
-		allGenres += genres[i].name + ", ";
-		
-		chosenOneGenres.textContent = allGenres;
-		
-	}
-
-
-
-	const platforms = chosenOne.platforms;
-	// console.log(platforms);
-	let platformLength = platforms.length;
-	let allPlatforms = "All Platforms: ";
-	for (let i = 0; i < platformLength; i++) {
-		allPlatforms += platforms[i].platform.name + ", ";
-		
-		chosenOnePlatforms.textContent = allPlatforms;
-		
-	}
-
-
-	const releaseDate = chosenOne.released;
-	chosenOneRelease.textContent = "Release Date: " + releaseDate;
-
-
-	const stores = chosenOne.stores;
-	let storesLength = stores.length;
-	let allStores = "Where to Play: ";
-	// const strStores = JSON.stringify(stores)
-	for (let i = 0; i < storesLength; i++) {
-		allStores += stores[i].store.name + ", ";
-		
-		chosenOneStores.textContent = allStores;
-		
-	}
-	
-
-
-	
-	
-	
-	
-
-
-	
-
-
+    chosenOneTitle.textContent = "";
+    chosenGameImage.textContent = "";
+    chosenOneGenres.textContent = "";
+    chosenOnePlatforms.textContent = "";
+    chosenOneRelease.textContent = "";
+    chosenOneStores.textContent = "";
+    // storeLinks.textContent = "";
+    const title = chosenOne.name;
+    chosenOneTitle.textContent = title;
+    const gameImage = chosenOne.background_image;
+    chosenGameImage.src = gameImage;
+    const genres = chosenOne.genres;
+    let genreLength = genres.length;
+    let allGenres = "Genres: ";
+    for (let i = 0; i < genreLength; i++) {
+        allGenres += genres[i].name + ", ";
+        chosenOneGenres.textContent = allGenres;
+    }
+    const platforms = chosenOne.platforms;
+    // console.log(platforms);
+    let platformLength = platforms.length;
+    let allPlatforms = "All Platforms: ";
+    for (let i = 0; i < platformLength; i++) {
+        allPlatforms += platforms[i].platform.name + ", ";
+        chosenOnePlatforms.textContent = allPlatforms;
+    }
+    const releaseDate = chosenOne.released;
+    chosenOneRelease.textContent = "Release Date: " + releaseDate;
+    const stores = chosenOne.stores;
+    let storesLength = stores.length;
+    let allStores = "Where to Play: ";
+    for (let i = 0; i < storesLength; i++) {
+        allStores += stores[i].store.name + ", ";
+        chosenOneStores.textContent = allStores;
+    }
+    let wikiSearchTitle = chosenOne.name;
+    let url = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${wikiSearchTitle}&limit=1&namespace=0&format=json&origin=*`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data[3])
+                const wikiLink = data[3];
+                storeLinks.href = wikiLink;
+            });
 }
 	
 	const game_container = document.getElementById('gamehtml');
