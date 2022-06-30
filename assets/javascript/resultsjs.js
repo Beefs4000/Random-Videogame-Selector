@@ -36,12 +36,37 @@ function generateGameDisplayHtml(event){
 	const gameImage = chosenOne.background_image;
 	chosenGameImage.src = gameImage;
 
-	const genre = chosenOne.genres;
-	const strGenre = JSON.stringify(genre)
-	// console.log(object.values(genre));
-	// genre.slice(0, 'end');
-	// genre.JSON.stringify(genres[name:]);
-	chosenOneGenres.textContent = "Genres: " + strGenre;
+
+	// const array1 = chosenOne.genres;
+	// array1.forEach(name => console.log(name));
+	// const strGenre = JSON.stringify(array1)
+	// console.log(genres);
+	// const strGenre = JSON.stringify(genres)
+	// chosenOneGenres.textContent = "Genres: " + strGenre;
+	
+	// console.log(strGenre);
+	// chosenOneGenres.textContent = "Genres: " + strGenre;
+	// var genres = genres;
+	
+
+	
+	const genres = chosenOne.genres[0].name;
+	var genreLength = genres.length;
+
+	for (var i = 0; i < genreLength; i++) {
+    	console.log(genres);
+		
+    	//Do something
+		chosenOneGenres.textContent = "Genres: " + genres;
+
+		if(genres => genres.length){
+			
+			break;
+		}
+	}
+
+
+
 
 	const platforms = chosenOne.platforms;
 	const strPlatforms = JSON.stringify(platforms)
