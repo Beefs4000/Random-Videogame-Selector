@@ -1,0 +1,17 @@
+.slider-navigation-previous {
+    
+    opacity: 0;
+}
+.slider-navigation-next {
+    
+    opacity: 0;
+}
+
+.item__description {
+  height: 60px;
+}
+
+.nav {
+    align-content: center;
+    justify-content: center;
+  }
