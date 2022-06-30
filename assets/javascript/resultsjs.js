@@ -15,13 +15,12 @@ const chosenOneGenres = document.getElementById('genres');
 const chosenOnePlatforms = document.getElementById('platforms');
 const chosenOneRelease = document.getElementById('release-date');
 const chosenOneStores = document.getElementById('stores');
+// const storeLinks = document.getElementById('store-links');
 
 const chosenOne = JSON.parse(localStorage.getItem('chosenOne')) || null;
 console.log(chosenOne);
 
-// const theGameData = JSON.stringify(chosenOne);
-// console.log(theGameData);
-// console.log(chosenOne.keys('slug'));
+
 function generateGameDisplayHtml(event){
 	chosenOneTitle.textContent = "";
 	chosenGameImage.textContent = "";
@@ -29,6 +28,7 @@ function generateGameDisplayHtml(event){
 	chosenOnePlatforms.textContent = "";
 	chosenOneRelease.textContent = "";
 	chosenOneStores.textContent = "";
+	// storeLinks.textContent = "";
 
 	const title = chosenOne.name;
 	chosenOneTitle.textContent = title;
@@ -36,69 +36,60 @@ function generateGameDisplayHtml(event){
 	const gameImage = chosenOne.background_image;
 	chosenGameImage.src = gameImage;
 
-
-	// const array1 = chosenOne.genres;
-	// array1.forEach(name => console.log(name));
-	// const strGenre = JSON.stringify(array1)
-	// console.log(genres);
-	// const strGenre = JSON.stringify(genres)
-	// chosenOneGenres.textContent = "Genres: " + strGenre;
 	
-	// console.log(strGenre);
-	// chosenOneGenres.textContent = "Genres: " + strGenre;
-	// var genres = genres;
-	
+	const genres = chosenOne.genres;
+	let genreLength = genres.length;
+	let allGenres = "Genres: ";
 
-	
-	const genres = chosenOne.genres[0].name;
-	var genreLength = genres.length;
-
-	for (var i = 0; i < genreLength; i++) {
-    	console.log(genres);
+	for (let i = 0; i < genreLength; i++) {
+		allGenres += genres[i].name + ", ";
 		
-    	//Do something
-		chosenOneGenres.textContent = "Genres: " + genres;
-
-		if(genres => genres.length){
-			
-			break;
-		}
+		chosenOneGenres.textContent = allGenres;
+		
 	}
 
 
 
-
 	const platforms = chosenOne.platforms;
-	const strPlatforms = JSON.stringify(platforms)
-	chosenOnePlatforms.textContent = "All Platforms: " + strPlatforms;
+	// console.log(platforms);
+	let platformLength = platforms.length;
+	let allPlatforms = "All Platforms: ";
+	for (let i = 0; i < platformLength; i++) {
+		allPlatforms += platforms[i].platform.name + ", ";
+		
+		chosenOnePlatforms.textContent = allPlatforms;
+		
+	}
+
 
 	const releaseDate = chosenOne.released;
 	chosenOneRelease.textContent = "Release Date: " + releaseDate;
 
+
 	const stores = chosenOne.stores;
-	const strStores = JSON.stringify(stores)
-	chosenOneStores.textContent = "Where To Buy: " + strStores;
+	let storesLength = stores.length;
+	let allStores = "Where to Play: ";
+	// const strStores = JSON.stringify(stores)
+	for (let i = 0; i < storesLength; i++) {
+		allStores += stores[i].store.name + ", ";
+		
+		chosenOneStores.textContent = allStores;
+		
+	}
+	
+
+
+	
+	
 	
 	
 
 
-
-
 	
-// 	return `
-// 	<div class="row">
-// 		<div class="columns five">
-// 			<img src="${gamedata.results.background_image}" alt="Box Art">
-// 			${slug.name ? `<p><strong>Game Name:</strong> ${slug.name}</p>` : ''}
-// 			${gamedata.background_image ? `<p><strong>Themes:</strong> ${gamedata.background_image}</p>` : ''}
-// 			${gamedata.platform ? `<p><strong>Platform:</strong> ${gamedata.platform}</p>` : ''}
-// 			${gamedata.developer ? `<p><strong>Developer:</strong> ${gamedata.developer}</p>` : ''}
-// 			${gamedata.release_date ? `<p><strong>Release Date:</strong> ${gamedata.release_date}</p>` : ''}
-// 		</div>
-// `;
-// generateGameDisplayHtml();
+
+
 }
-	// const get_game_btn = document.getElementById('get_game');
+	
 	const game_container = document.getElementById('gamehtml');
 
 function getRandomGame(){
@@ -106,25 +97,17 @@ function getRandomGame(){
 		.then(Response => Response.json())
 }
 
-// function renderGame(game){
+
 	const newInnerHTML = generateGameDisplayHtml();
-	game_container.innerHTML = newInnerHTML;
-	// newInnerHTML.textContent = "hello";
-// }
+	
+
 
 function fetchAndDisplayGame(){
 
 	getRandomGame()
 		.then(game => {
 			console.log(game)
-			// {
-			// 	"8894": {
-			// 		data: {
-			// 			box_art: 'https;??'
-			// 			.charAt.apply.
-			// 		}
-			// 	}
-			// }
+			
 			const gamedata = game[rangame].data
 			console.log(game[rangame].data)
 	
@@ -132,8 +115,6 @@ function fetchAndDisplayGame(){
 	
 			})
 }
-
-// get_game_btn.addEventListener('click',fetchAndDisplayGame)	
 
 
 // get chosen one from local storage
@@ -148,5 +129,3 @@ if(chosenOne === null){
 	
 
 }
-
-// get a random game
